@@ -19,9 +19,9 @@ const appHandlr = app => {
         console.log('req method : '+reqMethod);
 
         if(reqMethod === "GET"){
-            userId = req.query['userId'];
+            userId = req.query['userId'].trim();
         }else if(reqMethod === "POST"){
-            userId = req.body.userId;
+            userId = req.body.userId.trim();
         }else{
             return res.status(403).send('Access Denied!!!');
         }
@@ -30,11 +30,8 @@ const appHandlr = app => {
             return item.userId == userId;
         });
 
-        console.log(`user size: ${user.length}`)
-
         if(user.length === 1){
             resp = user[0];
-            delete resp.userId;
             userData = require(bPath+userId+'-'+reqMethod+'.json')
             Object.assign(resp, userData); 
         }else{
