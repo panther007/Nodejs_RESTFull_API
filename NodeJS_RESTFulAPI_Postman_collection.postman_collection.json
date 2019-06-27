@@ -1,0 +1,120 @@
+{
+	"info": {
+		"name": "NodeJS_RESTFulAPI_Postman_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET-getUserDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SERVER_URL}}/getUserDetails?userId=jchri0001",
+					"host": [
+						"{{SERVER_URL}}"
+					],
+					"path": [
+						"getUserDetails"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "jchri0001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST-getUserDetails",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userId",
+							"value": "jchri0001",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{SERVER_URL}}/getUserDetails",
+					"host": [
+						"{{SERVER_URL}}"
+					],
+					"path": [
+						"getUserDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SERVER_URL}}",
+					"host": [
+						"{{SERVER_URL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST-/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{SERVER_URL}}",
+					"host": [
+						"{{SERVER_URL}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "SERVER_URL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
